@@ -124,6 +124,9 @@ function Login(props) {
               fontSize: "0.9rem",
               marginLeft: "2px",
               ml: "1.8rem",
+              "&:hover": {
+                background: "transparent",
+              },
             }}
           >
             Sign in
@@ -134,9 +137,12 @@ function Login(props) {
               color: "#3A4BE0",
               fontSize: "0.9rem",
               border: "1px solid #3A4BE0",
-              borderRadius: "6px",
+              borderRadius: "12px",
               ml: "1.6rem",
               mt: "7px",
+              "&:hover": {
+                background: "transparent",
+              },
             }}
           >
             Download
@@ -152,41 +158,67 @@ function Login(props) {
           backgroundImage: `url(${images.bgrLogin})`,
         }}
       >
-        <Box>
-          <Grid container item xs={12} spacing={2}>
-            <Grid item xs={6}>
+        <Box height='100%'>
+          <Grid
+            container
+            item
+            xs={12}
+            spacing={2}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              height: "100%",
+            }}
+          >
+            <Grid
+              item
+              xs={6}
+              sx={{
+                justifyContent: "center",
+                display: "flex",
+              }}
+            >
               <Box
                 sx={{
                   width: "68%",
+                  display: "flex",
                 }}
               >
-                <Typography
-                  sx={{
-                    color: "#fff",
-                    fontSize: "2rem",
-                    fontWeight: "700",
+                <img
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                    marginRight: "8px",
                   }}
-                >
-                  SAMNOTE
-                </Typography>
-                <Typography
-                  sx={{
-                    color: "#fff",
-                    fontSize: "1.8rem",
-                    fontWeight: "700",
-                  }}
-                >
-                  Lorem ipsum dolor sit amet consectetur. Etiam mauris dignissim phasellus blandit.
-                  Malesuada donec m
-                </Typography>
+                  src={images.logo}
+                />
+                <Box>
+                  <Typography
+                    sx={{
+                      color: "#fff",
+                      fontSize: "2rem",
+                      fontWeight: "700",
+                    }}
+                  >
+                    SAMNOTE
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: "#fff",
+                      fontSize: "1.8rem",
+                      fontWeight: "700",
+                    }}
+                  >
+                    Create Free Notes, Calendar Reminders, Group Chat, Share Notes With AI
+                  </Typography>
+                </Box>
               </Box>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={6} direction='row' justifyContent='center' alignItems='stretch'>
               <Box
                 sx={{
                   width: "70%",
                   minWidth: "400px",
-                  height: "90%",
                   maxWidth: "1500px",
                   maxHeight: "615px",
                   borderRadius: "10px",
@@ -199,21 +231,6 @@ function Login(props) {
                 className='box-container'
               >
                 <Box sx={{ display: "flex" }}>
-                  {window.width > 1200 ? (
-                    <img
-                      src='../../../assets/login.jpg'
-                      style={{
-                        width: "50%",
-                        minWidth: "450px",
-                        maxWidth: "500px",
-                        objectFit: "contain",
-                      }}
-                      alt='login-jpg'
-                    />
-                  ) : (
-                    ""
-                  )}
-
                   <Box
                     sx={{
                       flex: "1 1",
@@ -261,6 +278,49 @@ function Login(props) {
             </Grid>
           </Grid>
         </Box>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          margin: "10px 200px",
+          alignItems: "center",
+        }}
+      >
+        <Box display='flex' alignItems='center'>
+          <img className='logo' src={images.logo} />
+          <Typography
+            sx={{
+              fontSize: "1.3rem",
+              fontWeight: "500",
+            }}
+          >
+            SAMNOTE
+          </Typography>
+        </Box>
+        <Typography
+          sx={{
+            fontSize: "1.2rem",
+            fontWeight: "550",
+          }}
+        >
+          Now we have mobile version for this app
+        </Typography>
+        <Button
+          sx={{
+            height: "35px",
+            color: "#3A4BE0",
+            fontSize: "0.9rem",
+            border: "1px solid #3A4BE0",
+            borderRadius: "12px",
+            mt: "7px",
+            "&:hover": {
+              background: "transparent",
+            },
+          }}
+        >
+          Download
+        </Button>
       </Box>
     </>
   );
